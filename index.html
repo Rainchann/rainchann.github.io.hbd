@@ -18,10 +18,11 @@
         </video> -->
         <img class="background" src=".\video\bg.webp" alt=""/>
         <div>
-            <audio loop autoplay class="happy-birth">
-                <source src=".\video\happy.mp3" type="audio/mp3">
-                not support
+            <audio autoplay controls class="happy-birth" preload="auto">
+                <source src=".\video\happy.mp3" type="audio/mpeg" />
+                nothing
               </audio>
+            <!-- <audio src=".\video\happy.mp3" autoplay="autoplay" type="audio/mpeg"></audio> -->
         </div>
 
         <canvas class="confetti" id="canvas"></canvas>
@@ -82,7 +83,10 @@
         //let viewwidth = $(window).width();
         //let viewport = document.querySelector("meta[name=viewport]");
         //viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initialscale=1.0");
-        
+       // window.onload = function() {
+           // document.getElementsByClassName("happy-birth").play();  
+       // }
+
         function show_popupbar() {
             document.querySelector(".popup-bar").classList.toggle("popup-bar-show")
         }
