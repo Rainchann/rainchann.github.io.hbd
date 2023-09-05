@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+    <title>Rain's page</title>
+
+    <link rel="stylesheet" href="./styles/logout.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="icon" href="./rain.png" type="image/png">
+</head>
+<body>
+    <div class="logout">
+        <img class="background" src=".\video\bg.webp" alt=""/>
+
+        <div class="header">
+            <div class="header-left">
+                <div class="header-quote">今日運勢： 運吉</div>
+            </div>
+            <div class="header-right">
+                <a href="./home.html" class="header-element header-home">主頁</a>
+                <a href="./diary.html" class="header-element header-diary">日記</a>
+                <a href="./diary.html" class="header-element header-schedule">計劃</a>
+                <a href="./diary.html" class="header-element header-game">遊戲</a>
+                <a href="./logout.html" class="header-element header-goal">登出</a>
+            </div>
+        </div>
+
+        <div class="header-m">
+            <button type="button" class="menu-open" onclick="show_popupbar()"><img src="./video/menu.png" alt="" />Menu</button>
+
+            <div class="popup-bar">
+                <!-- <img class="bar-bg" src="./video/for_bar.jpg" alt="" /> -->
+
+                <div class="bar-options" onclick="goTo('./home.html')">主頁</div>
+                <div class="bar-options" onclick="goTo('./diary.html')">日記</div>
+                <div class="bar-options" onclick="goTo('./diary.html')"></div>
+                <div class="bar-options" onclick="goTo('./diary.html')"></div>
+                <div class="bar-options" onclick="goTo('./logout.html')">登出</div>
+            </div>
+        </div>
+
+        <div class="logout-box">
+            <input type="button" value="登出" class="logout-button" onclick="logout()" />
+        </div>
+
+        <div>
+            <div class="box-back"></div>
+        </div>
+        <div class="username-display"></div>
+    </div>
+</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        (function() {
+            document.querySelector(".username-display").textContent = "用戶：" + localStorage.getItem("m_username")
+        }());
+
+        //not letting mobile user scroll
+        //let viewheight = $(window).height();
+        //let viewwidth = $(window).width();
+        //let viewport = document.querySelector("meta[name=viewport]");
+        //viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initialscale=1.0");
+        
+        function logout() {
+            window.location.href = "./login.html"
+        }
+
+        function show_popupbar() {
+            document.querySelector(".popup-bar").classList.toggle("popup-bar-show")
+        }
+
+        function goTo(location) {
+            window.location.href = location
+        }
+
+    </script>
+</html>

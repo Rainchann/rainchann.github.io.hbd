@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+    <title>Rain's page</title>
+
+    <link rel="stylesheet" href="./styles/registration.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="icon" href="./rain.png" type="image/png">
+</head>
+<body>
+    <div class="reg">
+        <img class="background" src=".\video\bg.webp" alt=""/>
+
+        <form action="registration.php" method="POST" class="reg-box">
+            <div class="reg-inner">
+                <div class="reg-title">你新黎架呀？快啲註個靚冊先</div>
+                <input class="reg-username" onclick="info_enter()" placeholder="用戶名稱" name="my_username" required/>
+                <input class="reg-password" onclick="info_enter()" placeholder="用戶密碼" name="my_password" required/>
+                <input class="reg-sentence" onclick="info_enter()" placeholder="一句讚美作者的說話" name="my_sentence" required/>
+            </div>
+
+            <input value="提交" type="submit" class="reg-submit" onclick="submit_form()" />
+            <input value="返去登入" type="button" class="reg-backto" onclick="backToLogin()" />
+            <div class="success-msg">✔ 你已成功註冊</div>
+        </form>
+
+        <div>
+            <div class="box-back"></div>
+        </div>
+    </div>
+</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        //to be clear
+        document.querySelector("body").style.height = "100%;"
+
+        //not letting mobile user scroll
+        //let viewheight = $(window).height();
+        //let viewwidth = $(window).width();
+        //let viewport = document.querySelector("meta[name=viewport]");
+        //viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initialscale=1.0");
+        let submit = document.querySelector(".reg-submit")
+        //submit.addEventListener( "click", () => {
+            //document.querySelector(".success-msg").style.display = 'block'
+        //})
+
+        function submit_form() {
+            if (document.querySelector(".reg-username").value == "" || document.querySelector(".reg-password").value == "" || document.querySelector(".reg-sentence").value == "") {
+                let viewheight = $(window).height();
+                let viewwidth = $(window).width();
+                let viewport = document.querySelector("meta[name=viewport]");
+                viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initialscale=1.0");
+            } else {
+                document.querySelector(".success-msg").style.display = 'block'
+                window.location.href = "./login.html"
+            }
+        }
+
+        function info_enter() {
+            let viewheight = $(window).height();
+            let viewwidth = $(window).width();
+            let viewport = document.querySelector("meta[name=viewport]");
+            viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initialscale=1.0");
+        }
+
+
+        function backToLogin() {
+            window.location.href = "./login.html"
+        }
+
+        let login_click = document.querySelector(".reg-sentence").addEventListener( "keyup", function(event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                document.querySelector(".reg-submit").click();
+            }
+        })
+    </script>
+</html>

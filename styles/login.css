@@ -1,0 +1,170 @@
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow: hidden;
+    color: white;
+}
+
+.login .login-box {
+    width:100%;
+}
+
+.login .login-inner {
+    position: absolute;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    left: 30%;
+    width:40%;
+    top:50%;
+    height:30%;
+    /* background-color: white; */
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    z-index: 30;
+}
+
+.login .login-title {
+    position: absolute;
+    left: 25%;
+    width:50%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.login .login-fullbox {
+    display: inline-flex;
+    width: 100%;
+    position: absolute;
+    top:35%;
+    height: 50%;
+}
+
+.login .login-leftbox {
+    width:25%;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.login .login-leftbox div{
+    height:15%;
+    margin-top: 5px;
+    margin-bottom: 45px;
+    font-size:18px;
+    margin-right: 10px;
+}
+
+.login .login-rightbox {
+    margin-right: 9%;
+}
+
+.login .login-rightbox input {
+    height:20%;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size:18px;
+}
+
+.login .login-submit {
+    position: absolute;
+    top:78%;
+    left: 40%;
+    width:20%;
+    height:15%;
+    font-size: 15px;
+}
+
+.login .false-msg {
+    position: absolute;
+    top:83%;
+    left: 60%;
+    width:40%;
+    text-align: center;
+    height:10%;
+    font-size: 13px;
+    color: red;
+    z-index:50 !important;
+}
+
+.login .login-register {
+    position: absolute;
+    margin-left: 80%;
+    width:15%;
+    text-align: center;
+    top:5%;
+    font-size: 1rem;
+    color: white;
+}
+
+@media screen and (max-width: 741px) {
+    .login .login-inner {
+        left: 10%;
+        width:80%;
+        top:50%;
+        height:30%;
+    }
+
+    .login .login-title {
+        left: 10%;
+        width:80%;
+        font-size: 20px;
+    }
+    
+    .login .login-fullbox {
+        width: 100%;
+        top:35%;
+        height: 50%;
+    }
+    
+    .login .login-leftbox {
+        width:60%;
+        margin-left: 5%;
+        text-align: center;
+    }
+    
+    .login .login-leftbox div{
+        height:15%;
+        margin-top: 5px;
+        margin-bottom: 45px;
+        font-size:13px;
+        margin-right: 10px;
+    }
+    
+    .login .login-rightbox {
+        margin-right: 10%;
+    }
+    
+    .login .login-rightbox input {
+        font-size:15px;
+    }
+    
+    .login .login-submit {
+        left: 60%;
+        width:30%;
+        height:12%;
+        font-size: 12px;
+    }
+    
+    .login .false-msg {
+        top: 95%;
+        left: 40%;
+        width:60%;
+        font-size: 13px;
+        color: red;
+    }
+  
+    .login .login-register {
+        font-size: 13px;
+        top:-8%;
+        margin-left: 70%;
+        width:25%;
+    }
+
+}
+
+/* @media screen and (max-height: 600px) {
+    .login .login-inner {
+        top:18%;
+    }
+} */

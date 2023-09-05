@@ -1,0 +1,22 @@
+{
+  "name": "xuan",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "main": "app.js",
+  "author": "rain",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7"
+  },
+  "description": "",
+  "javascript.validate.enable": false
+}

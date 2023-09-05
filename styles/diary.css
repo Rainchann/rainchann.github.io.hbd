@@ -1,0 +1,259 @@
+.received-data {
+    display: none;
+}
+
+body {
+    margin:0;
+    padding:0;
+    overflow: hidden !important;
+    height: 100%;
+    font-family: 'Caveat', cursive;
+    /* font-size: 15px; */
+    
+}
+
+/* .diary .left-bar{
+    position: absolute;
+    left:0;
+    height:auto;
+    background-color: black;
+    width:250px;
+    opacity: 0.7;
+}
+
+.diary .left-bar-inner {
+    width:100%;
+}
+.diary .left-bar .left-bar-element {
+    display: block;
+    color:white;
+    text-align: center;
+    padding-top: 4px;
+    height:25px;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.diary .left-bar .left-bar-element:hover {
+    background-color: #D0D3D4;
+}
+
+.diary .left-bar .left-bar-element:visited{
+    background-color: #D0D3D4;
+}
+
+.diary .left-bar-select-title {
+    display: inline-block;
+    margin-top: 20px;
+    width:30%;
+}
+
+.diary .left-bar-current-date {
+    color: white;
+    opacity: 1 !important;
+    margin: 15px 15px;
+    font-size: 20px;
+} */
+
+.diary .label-for-year {
+    color: white;
+    margin:15px 10px 15px 15px;
+}
+
+.diary .diary-main {
+    position: absolute;
+    top:80px;
+    width: 100%;
+    bottom:30px;
+}
+
+.diary .diary-inner {
+    position: absolute;
+    left:10%;
+    top:5%;
+    width:80%;
+    height:90%;
+    opacity: 1;
+    background-color: white;
+    border: 8px solid #3A5163;
+}
+.diary .diary-header {
+    position: absolute;
+    top:0;
+    width:100%;
+    height:45px;
+}
+
+.diary #diary-title {
+    display: inline-block;
+    width:50%;
+    font-size: 23px;
+    margin-top: 11px;
+    margin-left: 25px;
+    border: none;
+    color: black;
+    background-color: white;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.diary #diary-title:focus {
+    outline: none;
+}
+
+.diary .diary-inner input[type=button], .diary .diary-inner input[type=submit] {
+    width:100px;
+    height:30px;
+    cursor: pointer;
+    background-color: white;
+    color:black;
+    border: 1px solid black;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight:100;
+}
+
+.diary .diary-edit {
+    position: absolute;
+    display: inline-block;
+    right:2%;
+    margin-top: 15px;
+}
+
+.diary #diary-content {
+    position: absolute;
+    margin: 60px 25px 30px 25px;
+    font-size: 17px;
+    left:0;
+    right:0;
+    top:0;
+    bottom: 0;
+    background-color: white;
+    color: black;
+    border: none;
+    resize: none;
+}
+
+.diary .diary-year {
+    height:27px;
+    margin-right: 10px;
+}
+
+.diary .diary-date {
+    display: inline-block;
+    color: black;
+    position: absolute;
+    right:15%;
+    margin-top:15px;
+    font-family: none;
+}
+
+.diary #diary-content:focus {
+    outline: none;
+}
+
+.diary .diary-save {
+    position: absolute;
+    right: 2%;
+    margin-top: 80px;
+}
+
+.diary .diary-edit-m {
+    display: none;
+}
+
+.diary .diary-edit-m {
+    display: none;
+}
+
+.diary .no-date-msg {
+    position: absolute;
+    right:39%;
+    margin-top:20px;
+    color: red;
+}
+
+@media screen and (max-width:741px) {
+
+    .diary .diary-main {
+        top:80px;
+        width: 100%;
+        bottom:30px;
+    }
+
+    .diary .diary-inner {
+        left:7%;
+        top: 5%;
+        width:83%;
+        right:5%;
+        height:93%;
+    }
+
+    .diary .diary-year {
+        height:27px;
+        position: absolute;
+        right:140%;
+        top:-350%;
+        margin-right: 0;
+    }
+
+    .diary #confirm-date {
+        position: absolute;
+        height:33px;
+        top:-350%;
+        left:30%;
+        width:80px;
+    }
+
+    .diary #confirm-date:hover {
+        background-color: #A6ACAF;
+    }
+
+    .diary .diary-edit {
+        display: none;
+    }
+
+    .diary .diary-edit-m {
+        display: block;
+        font-size: 0;
+        position: absolute;
+        display: inline-block;
+        right:3%;
+        margin-top: 8px;
+        width:35px;
+        height:35px;
+        background-color: white;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .diary .diary-edit-m img{
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        width:100%;
+        height: 100%;
+    }
+
+    .diary .diary-save {
+        position: absolute;
+        right: 2%;
+        bottom:2%;
+    }
+
+    .diary .no-date-msg {
+        position: absolute;
+        right:0%;
+        margin-top:-95px;
+        color: white;
+    }
+
+    .username-display {
+        position: absolute;
+        top: 2%;
+        right:2%;
+        color: white;
+        font-size: 12px;
+    }
+}

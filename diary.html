@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" >
+    <title>Diary</title>
+
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/diary.css">
+    <link rel="icon" href="./rain.png" type="image/png">
+</head>
+
+<body class="diary">
+    <img class="background" src=".\video\bg.webp" alt=""/>
+
+    <div class="header">
+        <div class="header-right">
+            <a href="./home.html" class="header-element header-home">主頁</a>
+            <a href="./diary.html" class="header-element header-diary">日記</a>
+            <a href="./diary.html" class="header-element header-schedule">計劃</a>
+            <a href="./diary.html" class="header-element header-game">遊戲</a>
+            <a href="./logout.html" class="header-element header-goal">登出</a>
+        </div>
+    </div>
+
+    <div class="header-m">
+        <button type="button" class="menu-open" onclick="show_popupbar()"><img src="./video/menu.png" alt="" />Menu</button>
+
+        <div class="popup-bar">
+            <!-- <img class="bar-bg" src="./video/for_bar.jpg" alt="" /> -->
+
+            <div class="bar-options" onclick="goTo('./home.html')">主頁</div>
+            <div class="bar-options" onclick="goTo('./diary.html')">日記</div>
+            <div class="bar-options" onclick="goTo('./diary.html')"></div>
+            <div class="bar-options" onclick="goTo('./diary.html')"></div>
+            <div class="bar-options" onclick="goTo('./logout.html')">登出</div>
+        </div>
+    </div>
+
+    <!-- <div class="left-bar">
+        <div class="left-bar-inner">
+            <div class="icon"></div>
+            <div class="left-bar-setting"></div>
+            <label for="year" class="label-for-year">Date: </label>
+            <select onclick="change_date()" name="year" id="year" class="left-bar-select-title">
+                <option id="2022" value="2022">2022</option>
+                <option id="2023" value="2023">2023</option>
+                <option id="2024" value="2024">2024</option>
+            </select>
+            <label for="month">.</label>
+            <select onclick="change_date()" name="month" id="month" class="left-bar-select-title">
+                <option id="1" value="1">January</option>
+                <option id="2" value="2">February</option>
+                <option id="3" value="3">March</option>
+                <option id="4" value="4">April</option>
+                <option id="5" value="5">May</option>
+                <option id="6" value="6">June</option>
+                <option id="7" value="7">July</option>
+                <option id="8" value="8">August</option>
+                <option id="9" value="9">September</option>
+                <option id="10" value="10">October</option>
+                <option id="11" value="11">November</option>
+                <option id="12" value="12">December</option>
+            </select>
+            <div class="left-bar-current-date">Current Date: </div>
+            <a onclick="get_data(1)" class="left-bar-element">1st</a>
+            <a onclick="get_data(2)" class="left-bar-element">2nd</a>
+            <a onclick="get_data(3)" class="left-bar-element">3rd</a>
+            <a onclick="get_data(4)" class="left-bar-element">4th</a>
+            <a onclick="get_data(5)" class="left-bar-element">5th</a>
+            <a onclick="get_data(6)" class="left-bar-element">6th</a>
+            <a onclick="get_data(7)" class="left-bar-element">7th</a>
+            <a onclick="get_data(8)" class="left-bar-element">8th</a>
+            <a onclick="get_data(9)" class="left-bar-element">9th</a>
+            <a onclick="get_data(10)" class="left-bar-element">10th</a>
+            <a onclick="get_data(11)" class="left-bar-element">11th</a>
+            <a onclick="get_data(12)" class="left-bar-element">12th</a>
+            <a onclick="get_data(13)" class="left-bar-element">13th</a>
+            <a onclick="get_data(14)" class="left-bar-element">14th</a>
+            <a onclick="get_data(15)" class="left-bar-element">15th</a>
+            <a onclick="get_data(16)" class="left-bar-element">16th</a>
+            <a onclick="get_data(17)" class="left-bar-element">17th</a>
+            <a onclick="get_data(18)" class="left-bar-element">18th</a>
+            <a onclick="get_data(19)" class="left-bar-element">19th</a>
+            <a onclick="get_data(20)" class="left-bar-element">20th</a>
+            <a onclick="get_data(21)" class="left-bar-element">21st</a>
+            <a onclick="get_data(22)" class="left-bar-element">22nd</a>
+            <a onclick="get_data(23)" class="left-bar-element">23rd</a>
+            <a onclick="get_data(24)" class="left-bar-element">24th</a>
+            <a onclick="get_data(25)" class="left-bar-element">25th</a>
+            <a onclick="get_data(26)" class="left-bar-element">26th</a>
+            <a onclick="get_data(27)" class="left-bar-element">27th</a>
+            <a onclick="get_data(28)" class="left-bar-element">28th</a>
+            <a onclick="get_data(29)" class="left-bar-element">29th</a>
+            <a onclick="get_data(30)" class="left-bar-element">30th</a>
+            <a onclick="get_data(31)" class="left-bar-element">31st</a>
+        </div>
+    </div> -->
+
+    <div class="diary-main">
+        <div class="diary-inner">
+            <form action="connect_diary.php" method="POST">
+                <!-- post user name -->
+                <div class="display-none" style="display:none">
+                    <input class="display-none username-ipt" type="text" value="" placeholder="user" name="my_username"/>
+                </div>
+                <div class="form-group diary-header">
+                    <input placeholder="Title" type="text" class="diary-input form-control" id="diary-title" name="my_title" disabled/>
+                    <div class="form-group diary-date"><span class="date-text">日期: </span> 
+                        <input placeholder="yy-" class="diary-year form-control" type="datetime-local" id="datetime-d" name="my_datetime"/>
+                        <input type="button" id="confirm-date" value="確定" onclick="choose_date(document.getElementById('datetime-d').value)" />
+                    </div>
+                    <input type="button" value="編輯" class="diary-edit" onclick="start_edit()" />
+                    <button type="button" class="diary-edit-m" onclick="start_edit()"><img src="./video/editing.png" alt=""/>編輯</button>              
+                    </div>
+                <div class="form-group">
+                <textarea placeholder="Content" type="text" name="my_content" class="diary-input form-control" id="diary-content" value="" disabled></textarea>
+                </div>
+                <input type="submit" value="儲存" class="diary-save" />
+            </form>
+            <div class="no-date-msg"></div>
+        </div>
+    </div>
+
+    <!-- <div class="received-data">
+        <form action="receive.php" method="GET">
+            <input placeholder="title" id="data-title" type="text" name="my_title"/>
+            <input placeholder="content" id="data-content" type="text" name="my_content"/>
+            <input placeholder="datetime" id="data-datetime" type="text" name="my_datetime"/>
+
+            <input type="submit" value="auto-sub" id="auto-submit" />
+        </form>
+    </div> -->
+    <div class="username-display"></div>
+</body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+TC:wght@700&family=PT+Sans&display=swap" rel="stylesheet">
+
+    <!-- <script src="app.js" type="text/javascript"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        (function() {
+            document.querySelector(".username-display").textContent = "用戶：" + localStorage.getItem("m_username")
+        }());
+
+        //not letting mobile user scroll
+        //let viewheight = $(window).height();
+        //let viewwidth = $(window).width();
+        //let viewport = document.querySelector("meta[name=viewport]");
+        //viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initialscale=1.0");
+
+        //call ajax
+        var ajax = new XMLHttpRequest();
+        var method = "GET";
+        var url = "receive_diary.php";
+        var asynchronous = true;
+        var data;
+        
+        ajax.open(method, url, asynchronous);
+        //sending ajax request
+        ajax.send();
+        
+        //receiving respense from receive.php
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // converting JSON back to array
+                data = JSON.parse(this.responseText);
+                //console.log(data) // for debugging
+                }
+            }
+
+        var ajax_login = new XMLHttpRequest();
+        var method_login = "GET";
+        var url_login = "user_login.php";
+        var asynchronous_login = true;
+        var data_login;
+            
+        ajax_login.open(method_login, url_login, asynchronous_login);
+        //sending ajax request
+        ajax_login.send();
+            
+        //receiving respense from receive.php
+        ajax_login.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+            // converting JSON back to array
+                data_login = JSON.parse(this.responseText);
+                //console.log(data_login) // for debugging
+                }
+            }
+  
+
+        function start_edit() {
+            if (document.getElementById("datetime-d").value == '') {
+                document.querySelector(".no-date-msg").textContent = "你未揀日期呀！"
+            } else {
+                document.querySelector(".diary-edit-m").classList.toggle("active-edit")
+                document.querySelector(".active-edit").style.backgroundColor = "#EAEAEA"
+                document.querySelector(".no-date-msg").textContent = ""
+                document.getElementById("diary-title").disabled = false
+                document.getElementById("diary-content").disabled = false
+            }
+
+            //console.log(document.getElementById("datetime-d").value)
+        }
+
+        function show_popupbar() {
+            document.querySelector(".popup-bar").classList.toggle("popup-bar-show")
+        }
+
+        function goTo(location) {
+            window.location.href = location
+        }
+        
+        function change_date() {
+            let year = document.getElementById("year").value
+            let month = document.getElementById("month").value
+            document.querySelector(".left-bar-current-date").textContent = "Current Date: " + month + " " + year
+        }
+        
+        (function() {
+            document.querySelector(".username-ipt").value = localStorage.getItem("m_username")
+           //window.location.href = "./receive.php"
+            /*let today = new Date()
+            let today_month = today.getMonth() + 1
+            let today_year = today.getFullYear()
+            document.getElementById(today_month).selected = true
+            document.getElementById(today_year).selected = true
+            let year = document.getElementById("year").value
+            let month = document.getElementById("month").value
+            document.querySelector(".left-bar-current-date").textContent = "Current Date: " + month + " " + year*/
+            
+            
+        })();
+        
+        function save_content() {
+            document.getElementById("diary-title").disabled = true
+            document.getElementById("diary-content").disabled = true
+            document.querySelector(".diary-edit-m").classList.toggle("active-edit")
+        
+            //localStorage.setItem(window.day_diff + "title", document.getElementById("diary-title").value)
+            //localStorage.setItem(window.day_diff + "content", document.getElementById("diary-content").value)
+        }
+        
+        function get_data(day) {
+            let year = document.getElementById("year").value
+            let month = document.getElementById("month").value
+            let day_diff;
+            window.day_diff = (new Date(year,month-1,day) - new Date(2022,7,7)) / (1000*60*60*24)
+
+            /*let data_datetime;
+            let data_year;
+            let data_month;
+            let data_day;
+
+            for (let i = 0; i < data.length; i++) {
+                let str = "hello"
+                console.log(data[i])
+                if (data[i].datetime != '') {
+                data_datetime = data[i].datetime
+                data_year = data_datetime.slice(0, 4)
+                data_month = data_datetime.slice(6, 7)
+                data_day = data_datetime.slice(8, 10)
+                } else {
+                    continue
+                }
+                //console.log(data_day)
+                if (data_year == year && data_month == month && data_day == day) {
+                    document.getElementById("diary-title").value = data[i].title
+                    document.getElementById("diary-content").value = data[i].content
+                } else {
+                    continue
+                }
+            } */
+        }
+
+        function choose_date(chosen_date) {
+            let year = chosen_date.slice(0, 4)
+            let month = chosen_date.slice(6, 7)
+            let day = chosen_date.slice(8, 10)
+
+            let data_datetime;
+            let data_year;
+            let data_month;
+            let data_day;
+            let data_username;
+
+            for (let i = 0; i < data.length; i++) {
+                //console.log(data[i])
+                if (data[i].datetime != '') {
+                data_datetime = data[i].datetime
+                data_year = data_datetime.slice(0, 4)
+                data_month = data_datetime.slice(6, 7)
+                data_day = data_datetime.slice(8, 10)
+                data_username = data[i].username
+
+                /*console.log(year)
+                console.log(month)
+                console.log(day)
+                console.log(data_year)
+                console.log(data_month)
+                console.log(data_day)*/
+            
+                } else {
+                    continue
+                }
+                //console.log(data_day)
+                if (data_year == year && data_month == month && data_day == day && data_username == localStorage.getItem("m_username")) {
+                    document.getElementById("diary-title").value = data[i].title
+                    document.getElementById("diary-content").value = data[i].content
+                } else {
+                    document.getElementById("diary-title").value = ''
+                    document.getElementById("diary-content").value = ''
+                }
+            }
+        }
+
+        //fast styling
+        document.querySelector(".date-text").style.color = 'white';
+    </script>
+</html>

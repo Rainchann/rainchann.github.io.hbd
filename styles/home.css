@@ -1,0 +1,53 @@
+body {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.start-color{
+    width:100px;
+    height:200px;
+    background-color:white;
+    z-index: 50 !important;
+    cursor: pointer;
+    border: 1px solid black;
+    display: block;
+}
+
+.confetti{
+    position: absolute;
+    max-width: 640px;
+    display: inline-flex;
+    margin: 0 auto;
+    /* border: 1px solid #ddd; */
+    user-select: none;
+    z-index: 10;
+ }
+
+canvas {
+    position:absolute;
+    display:block;
+    z-index: 9;
+}
+h1 {
+  position: absolute;
+  top: 20%;
+  /* left:5%; */
+  text-align: center;
+  /* left: 50%;  */
+  /* transform: translate(-50%, -50%);  */
+  color: #fff;
+  font-family: 'Combo', cursive;
+  font-size: 48px;
+  font-weight: 900;
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 0 10px;
+  z-index: 10;
+  border: none;
+}
+
+.happy-birth {
+    display: none;
+}
