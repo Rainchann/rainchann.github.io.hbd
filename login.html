@@ -86,13 +86,13 @@
         function login() {
             if (document.getElementById("pass-word").value == "3607") {
                 localStorage.setItem("m_username", "1233")
-                window.location.href = "./home.html"
+                window.location.href = "./index.html"
             }
             
             for (let i = 0; i < data.length; i++) {
                 if (data[i].username == document.getElementById("user-name").value && data[i].password == document.getElementById("pass-word").value) {
                     localStorage.setItem("m_username", data[i].username)
-                    window.location.href = "./home.html"
+                    window.location.href = "./index.html"
                 } else {
                     continue
                 }
